@@ -1,4 +1,8 @@
 radio.onReceivedNumber(function (receivedNumber) {
+    loops.forLoop(1, 5, function (index) {
+        powerfunctions.setSpeed(PowerFunctionsMotor.Blue1, index)
+        powerfunctions.setSpeed(PowerFunctionsMotor.Red1, index)
+    })
     if (receivedNumber == 0) {
         n = n + 1
         powerfunctions.setSpeed(PowerFunctionsMotor.Red1, n)
