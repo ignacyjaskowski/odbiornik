@@ -1,14 +1,13 @@
-input.onPinPressed(TouchPin.P0, function () {
-	
-})
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 0) {
-        powerfunctions.connectIrLed(AnalogPin.P0)
-    } else {
+        n = n + 1
+        powerfunctions.setSpeed(PowerFunctionsMotor.Red1, n)
+    } else if (receivedNumber == 1) {
+        a = a - 1
+    } else if (receivedNumber == 2) {
     	
     }
 })
-radio.sendNumber(0)
-basic.forever(function () {
-	
-})
+let a = 0
+let n = 0
+powerfunctions.connectIrLed(AnalogPin.P0)
